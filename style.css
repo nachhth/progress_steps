@@ -8,6 +8,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  color: whitesmoke;
 }
 
 .progress_container {
@@ -15,18 +16,32 @@ body {
   display: flex;
   justify-content: space-between;
   width: clamp(320px, 50%, 500px);
+  margin-bottom: 20px;
+  user-select: none;
 }
 
 .progress_line {
   position: absolute;
-  top: 45%;
+  top: 40%;
   left: 0%;
-  height: 5px;
+  height: 7px;
   width: 0%;
   background-color: teal;
+  border-radius: 50px;
   z-index: -1;
+  margin-left: 0.5px;
+  transition: 1s;
+}
+
+.step {
+  padding: 5px 10px;
+  border-radius: 50%;
+  border: 2px solid teal;
+  transition: 1s;
+  cursor: pointer;
 }
 
 .active {
   background-color: teal;
+  border-color: whitesmoke;
 }

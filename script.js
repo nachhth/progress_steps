@@ -1,14 +1,14 @@
 'use strict';
 
-// const next = document.querySelector('#next');
-// const prev = document.querySelector('#prev');
+const next = document.querySelector('#next');
+const prev = document.querySelector('#prev');
 const steps = document.querySelectorAll('.step');
 const progressLine = document.querySelector('.progress_line');
 
 let currentStep = 1;
 
-// next.addEventListener('click', onNextClick);
-// prev.addEventListener('click', onPrevClick);
+next.addEventListener('click', onNextClick);
+prev.addEventListener('click', onPrevClick);
 
 steps.forEach((step, index) => {
   step.addEventListener('click', () => setStep(index));
@@ -44,5 +44,11 @@ function render() {
   steps.forEach((step, index) => {
     if (index < currentStep) step.classList.add('active');
     else step.classList.remove('active');
+
+    if (currentStep === 4) next.classList.add('disabled');
+    else next.classList.remove('disabled');
+
+    if (currentStep === 1) prev.classList.add('disabled');
+    else prev.classList.remove('disabled');
   });
 }
